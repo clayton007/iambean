@@ -8,7 +8,7 @@ import java.util.Queue;
 import java.util.Set;
 
 /*
- * Leetcode example
+ * Leetcode examples
  * */
 public class Solution1129 {
 	
@@ -30,7 +30,7 @@ public class Solution1129 {
 			blueMap.get(blueEdge[0]).add(blueEdge[1]);
 		}
 
-		// ºì±ßÎªÆðµã
+		// ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½
 		int len = 0;
 		boolean isRed = true;
 		boolean[] visitedRed = new boolean[n];
@@ -44,7 +44,7 @@ public class Solution1129 {
 		}
 		bfs(redMap, blueMap, len, isRed, visitedRed, visitedBlue, queue);
 
-		// À¶±ßÎªÆðµã
+		// ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½
 		isRed = false;
 		visitedRed = new boolean[n];
 		visitedBlue = new boolean[n];
@@ -73,7 +73,7 @@ public class Solution1129 {
             int size = queue.size();
             len++;
             if (isRed) {
-                // queueÖÐ½ÚµãÎªºì±ßÖÕµã£¬¼´ÏÂÒ»²½Ó¦¸Ã×ßÀ¶±ß
+                // queueï¿½Ð½Úµï¿½Îªï¿½ï¿½ï¿½ï¿½Õµã£¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 isRed = false;
                 while (size-- > 0) {
                     int idx = queue.remove();
@@ -85,7 +85,7 @@ public class Solution1129 {
                             continue;
                         }
                         for (int d : desSet) {
-                            // ¼ì²éÊÇ·ñÒÑ¾­±éÀú¹ýºì±ßÒÔd×÷ÎªÆðµã
+                            // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ï¿½Îªï¿½ï¿½ï¿½
                             if (!visitedRed[d]) {
                                 queue.offer(d);
                             }
@@ -93,7 +93,7 @@ public class Solution1129 {
                     }
                 }
             } else {
-                // queueÖÐ½ÚµãÎªÀ¶±ßÖÕµã£¬¼´ÏÂÒ»²½Ó¦¸Ã×ßºì±ß
+                // queueï¿½Ð½Úµï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Õµã£¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ßºï¿½ï¿½
                 isRed = true;
                 while (size-- > 0) {
                     int idx = queue.remove();
@@ -105,7 +105,7 @@ public class Solution1129 {
                             continue;
                         }
                         for (int d : desSet) {
-                            // ¼ì²éÊÇ·ñÒÑ¾­±éÀú¹ýÀ¶±ßÒÔd×÷ÎªÆðµã
+                            // ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ï¿½Îªï¿½ï¿½ï¿½
                             if (!visitedBlue[d]) {
                                 queue.offer(d);
                             }
